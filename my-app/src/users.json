@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Zenith",
+            "email": "john.zenith.me@gmail.com",
+            "status": "activated"
+        },
+        {
+            "id": 2,
+            "name": "Dolph Wayne",
+            "email": "dolphwayne@gmail.com",
+            "status": "deactivated"
+        },
+        {
+            "id": 3,
+            "name": "Muni Sheric",
+            "email": "john.zenith.me@gmail.com",
+            "status": "deactivated"
+        }
+    ]
+}
