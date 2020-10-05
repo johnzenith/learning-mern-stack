@@ -1,0 +1,2 @@
+const DB_PWD = 'Test.Pwd.2020.atlas.user.dev';
+const DB_NAME = 'test-cluster-1';

@@ -1,0 +1,16 @@
+nav.navbar {
+    flex-flow: column;
+}
+
+.register-form-wrapper,
+.login-form-wrapper {
+    max-width: 400px;
+    height: auto;
+    margin: 0px auto;
+}
+
+.user-form {
+    padding: 15px;
+    box-shadow: 0px 0px 2px 1px #2d2b2b5e;
+    border-radius: 4px;
+}

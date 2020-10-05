@@ -1,0 +1,39 @@
+<h1 class="text-center mb-3">{{title}}</h1>
+
+<div class="login-form-wrapper">
+    <div class="mb-3">
+        {{#if (notIsEmpty login_error)}}
+            <div class="alert alert-danger py-1" role="alert">
+                {{login_error}}
+            </div>
+        {{/if}}
+        
+        {{#if (notIsEmpty success_msg)}}
+            <div class="alert alert-success py-1" role="alert">
+                {{success_msg}}
+            </div>
+        {{/if}}
+
+        {{#if (notIsEmpty error_msg)}}
+            <div class="alert alert-success py-1" role="alert">
+                {{error_msg}}
+            </div>
+        {{/if}}
+    </div>
+
+    <form action="/login" method="POST" class="user-form mb-4">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Enter Password" class="form-control" minlength="8" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form> 
+</div>
+
+<hr class="m-3">
+
+<p class="text-center">Don't have an account? <a href="/register">Register</a></p>

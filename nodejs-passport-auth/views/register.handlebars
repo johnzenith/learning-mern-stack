@@ -1,0 +1,82 @@
+<h1 class="text-center m-3">{{title}}</h1>
+
+<div class="register-form-wrapper">
+    <div class="mb-3">
+        {{#if errors}}
+            {{#each errors}}
+                <div class="alert alert-danger py-1" role="alert">
+                    {{this.msg}}
+                </div>
+            {{/each}}
+        {{/if}}
+            
+        {{#if (notIsEmpty success_msg)}}
+            <div class="alert alert-success py-1" role="alert">
+                {{success_msg}}
+            </div>
+        {{/if}}
+    </div>
+
+    {{#if (isEmpty success_msg)}}
+        <form action="/register" method="POST" class="user-form mb-4">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input 
+                    id="name" 
+                    type="text" 
+                    name="name"    
+                    class="form-control" 
+                    minlength="5" 
+                    value="{{#if (isdefined name)}}{{name}}{{else}}{{/if}}" 
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    id="email" 
+                    type="email" 
+                    name="email" 
+                    class="form-control" 
+                    value="{{#if (isdefined email)}}{{email}}{{else}}{{/if}}" 
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    id="password" 
+                    type="password" 
+                    name="password" 
+                    class="form-control" 
+                    placeholder="Create Password" 
+                    minlength="8" 
+                    value="{{#if (isdefined password)}}{{password}}{{else}}{{/if}}"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input 
+                    id="confirm-password" 
+                    type="password" 
+                    name="password2" 
+                    placeholder="Confirm Password" 
+                    class="form-control" 
+                    minlength="8" 
+                    {{#if (isdefined password2)}}{{password2}}{{else}}{{/if}}
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    {{/if}} 
+</div>
+
+<hr class="m-2">
+
+<p class="text-center">
+    {{#if (isEmpty success_msg)}}
+        Have an account already?
+    {{else}}
+        Click here to
+    {{/if}}
+
+    <a href="/login">Login</a>
+</p>
